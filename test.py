@@ -1,28 +1,8 @@
-# !	/user/bin/env python
+import spidev
 import time
-file_abs = "/dev/spidev0.0"
-f  =  open(file_abs, "w")
-
-f.write("\x00\n");
+spi = spidev.SpiDev()
+spi.open(0, 0)
+spi.writebytes([0xff])
 time.sleep(3)
-f.write("\xFF\n");
+spi.writebytes([0x00])
 time.sleep(3)
-
-
-f.write("\xFF\n");
-time.sleep(3)
-f.write("\x00\n");
-time.sleep(3)
-
-
-f.write("\xFF\n");
-time.sleep(3)
-f.write("\x00\n");
-time.sleep(3)
-
-
-f.write("\xFF\n");
-time.sleep(3)
-f.write("\x00\n");
-time.sleep(3)
-
