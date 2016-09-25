@@ -1,7 +1,7 @@
 # !	/user/bin/env python
 import time
 file_abs = "/dev/spidev0.0"
-f  =  open(file_abs, "rw")
+f  =  open(file_abs, "w")
 
 f.write("\xFF");
 time.sleep(3)
