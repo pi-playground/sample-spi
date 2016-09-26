@@ -1,10 +1,12 @@
 import spidev
 import time
 from  gpiozero import DigitalOutputDevice
+root_power =  DigitalOutputDevice(21, initial_value=0, active_high=False)
 switch =  DigitalOutputDevice(12, initial_value=0)
 oe =  DigitalOutputDevice(16, initial_value=0)
 oe.off()
 switch.off()
+root_power.on()
 
 def latchData():
 	switch.on()
