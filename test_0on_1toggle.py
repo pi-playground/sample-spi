@@ -2,6 +2,8 @@ import spidev
 import time
 from  gpiozero import DigitalOutputDevice
 switch =  DigitalOutputDevice(12, initial_value=0)
+oe =  DigitalOutputDevice(16, initial_value=0)
+oe.off()
 switch.off()
 
 def latchData():
