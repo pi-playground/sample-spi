@@ -4,7 +4,7 @@ from  gpiozero import DigitalOutputDevice
 switch =  DigitalOutputDevice(12, initial_value=0)
 switch.off()
 
-def latchData:
+def latchData():
 	switch.on()
 	time.sleep(0.001)
 	switch.off()
