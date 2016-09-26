@@ -15,8 +15,8 @@ def latchData():
 	switch.off()
 
 spi = spidev.SpiDev()
-spi.max_speed_hz = 5000
 spi.open(0, 0)
+spi.max_speed_hz = 5000
 spi.writebytes([0x00,0x00])
 latchData()
 time.sleep(3)
