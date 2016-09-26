@@ -7,7 +7,7 @@ oe =  DigitalOutputDevice(16, initial_value=0)
 oe.off()
 switch.off()
 root_power.on()
-spi.max_speed_hz = 5000
+
 
 def latchData():
 	switch.on()
@@ -15,6 +15,7 @@ def latchData():
 	switch.off()
 
 spi = spidev.SpiDev()
+spi.max_speed_hz = 5000
 spi.open(0, 0)
 spi.writebytes([0x00,0x00])
 latchData()
